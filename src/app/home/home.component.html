@@ -1,0 +1,27 @@
+<div class="container-fluid cards">
+  <div class="row w-100 m-0">
+    <!-- ng-class="{ 'text-success': awesome, 'text-large': giant }" -->
+    <div [ngClass]="getWidth(el)" class=" col-sm-6 col-12 p-0 mt-4" *ngFor="let el of arr; let i = index">
+      <div class="card">
+        <div class="card-header bgc-{{ i + 1 }}">
+          step {{ i + 1 }}
+          <!-- <div class="train"></div> -->
+        </div>
+        <div class="card-body">
+          <div class="row content_style">
+            <div [ngClass]="getContentWidth(el)" class="col_content" *ngFor="let item of el.content">
+              <div class="content_body_style">
+                <h5 class="card-title">{{item?.hedaer}}</h5>
+                <!-- <p>{{item?.body}} </p> -->
+                <ul class="card-text" *ngFor="let list of item.test">
+                  <li>{{list?.li}}</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
